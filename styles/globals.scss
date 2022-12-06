@@ -46,4 +46,26 @@
     width: 100%;
     transition: width 0.3s;
   }
+
+  .animate-button {
+    width: 140px;
+    @apply h-14 flex justify-center items-center transition duration-[.3s] ease-in-out bg-transparent;
+    text-align: center;
+    z-index: 20;
+    &:hover {
+      @apply tracking-[1px];
+    }
+  }
+
+  .blurple {
+    --color: #7289da;
+  }
+
+  .orange {
+    --color: #ff5722;
+  }
+
+  .bg-hover:hover {
+    @apply bg-[var(--color)];
+  }
 }
