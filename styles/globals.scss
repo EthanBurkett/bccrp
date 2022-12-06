@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* COLORS 
+  Primary: 222831
+  Secondary: 2D4059
+  Accent: FF5722
+  Text: EEEEEE
+*/
+
+@layer {
+  * {
+    font-family: "Oswald";
+  }
+  .bg-dark {
+    background: darken(#222831, 5%);
+  }
+  .darker-text {
+    color: darken(#eeeeee, 40%);
+  }
+  .nav-item {
+    @apply px-1 tracking-[3px] text-[#EEEEEE]/80;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  .nav-item:hover {
+    color: white;
+  }
+  .nav-item::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    height: 2px;
+    text-align: center;
+    background-color: #ff5722;
+    transition: width 0.3s;
+  }
+
+  .nav-item:hover::before {
+    width: 100%;
+    transition: width 0.3s;
+  }
+}
