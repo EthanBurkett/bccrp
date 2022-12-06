@@ -10,7 +10,7 @@ const Navbar = (props: Props) => {
       className="w-screen h-14 flex items-center justify-between fixed p-12 z-50 transition-all"
     >
       <div className="flex flex-row gap-6 justify-center items-center">
-        <h1>logo</h1>
+        {/* <h1>logo</h1> */}
         <h1 className="text-4xl tracking-[3px] uppercase font-['Oswald']">
           bccrp
         </h1>
