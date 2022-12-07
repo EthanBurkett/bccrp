@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { BiChevronDown } from "react-icons/bi";
 type Props = {};
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Hero = (props: ScriptProps) => {
   const [image, setImage] = React.useState<number>(1);
@@ -65,7 +66,8 @@ const Hero = (props: ScriptProps) => {
         <div className="w-full h-full bg-[rgba(0,0,0,0.35)] absolute z-40"></div>
         {images.map((img, index) => (
           <>
-            <img
+            <Image
+              alt="background"
               src={img}
               ref={imageEls[index]}
               className={`w-full h-full object-cover absolute transition-[opacity] duration-75 ${
