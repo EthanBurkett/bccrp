@@ -37,14 +37,14 @@ const Navbar = (props: Props) => {
           bccrp
         </h1>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, ease: "easeInOut", delay: 0.5 }}
-        viewport={{ once: true }}
-        className="md:flex flex-row gap-4 md:gap-12 justify-center items-center"
-      >
-        <div className="hidden md:flex flex-row gap-4 md:gap-12 justify-center items-center">
+      <div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut", delay: 0.5 }}
+          viewport={{}}
+          className="md:flex flex-row gap-4 md:gap-12 justify-center items-center hidden"
+        >
           <p
             onClick={() =>
               document.getElementById("main")!.scrollTo({
@@ -72,10 +72,29 @@ const Navbar = (props: Props) => {
               Dashboard
             </p>
           </Link>
-        </div>
-        <div className="md:hidden flex flex-row gap-4 justify-center items-center z-50 relative">
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: 100,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 1.2,
+            ease: "easeOut",
+            delay: 0.5,
+          }}
+          className="md:hidden flex flex-row gap-4 justify-center items-center z-50 relative"
+        >
           <Squash toggled={open} toggle={handleToggle} />
-        </div>
+        </motion.div>
         <div
           id="mobile-menu"
           className="w-screen h-0 bg-[#222831] fixed top-0 left-0 flex flex-col justify-evenly items-center z-40"
@@ -118,7 +137,7 @@ const Navbar = (props: Props) => {
             icon={<RiDashboardFill size={48} />}
           />
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -137,7 +156,22 @@ const MobileNavItem = (
   } & ScriptProps
 ) => {
   return (
-    <div
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: -100,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      transition={{
+        duration: 1.2,
+        ease: "easeOut",
+      }}
+      viewport={{
+        once: true,
+      }}
       onClick={(e) => {
         props.functions.setOpen(false);
         props.functions.handleToggle();
@@ -152,7 +186,7 @@ const MobileNavItem = (
     >
       <div className="icon">{props.icon}</div>
       <h1 className="text-3xl">{props.text}</h1>
-    </div>
+    </motion.div>
   );
 };
 
