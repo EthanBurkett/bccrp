@@ -30,6 +30,20 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto&display=swap"
         ></link>
+        <meta property="og:title" content="Blaine County Roleplay" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://blaineccrp.com/" />
+        <meta
+          property="og:image"
+          content="https://player.blaineccrp.com/static/img/gta.png"
+        />
+        <meta
+          property="og:description"
+          content="One of the best roleplay servers that you can find on FiveM. active departments and professional staff."
+        />
+        <meta property="og:site_name" content="Blaine County Roleplay" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="theme-color" content="#FF5722" />
       </Head>
 
       <section id="hero" className="snap-center scroll-smooth">
