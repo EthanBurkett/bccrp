@@ -5,6 +5,7 @@ import { FaHome } from "react-icons/fa";
 import { MdFeaturedPlayList } from "react-icons/md";
 import { RiDashboardFill } from "react-icons/ri";
 import { ScriptProps } from "next/script";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -24,13 +25,25 @@ const Navbar = (props: Props) => {
       id="navbar"
       className="w-screen h-14 flex items-center justify-between fixed p-12 z-[60] transition-all"
     >
-      <div className="flex flex-row gap-6 justify-center items-center">
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2 }}
+        viewport={{ once: true }}
+        className="flex flex-row gap-6 justify-center items-center"
+      >
         {/* <h1>logo</h1> */}
         <h1 className="text-4xl tracking-[3px] uppercase font-['Oswald']">
           bccrp
         </h1>
-      </div>
-      <div className="md:flex flex-row gap-4 md:gap-12 justify-center items-center">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2, ease: "easeInOut", delay: 0.5 }}
+        viewport={{ once: true }}
+        className="md:flex flex-row gap-4 md:gap-12 justify-center items-center"
+      >
         <div className="hidden md:flex flex-row gap-4 md:gap-12 justify-center items-center">
           <p
             onClick={() =>
@@ -105,7 +118,7 @@ const Navbar = (props: Props) => {
             icon={<RiDashboardFill size={48} />}
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

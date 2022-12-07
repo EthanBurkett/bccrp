@@ -10,16 +10,34 @@ import { ImAirplane, ImHammer2 } from "react-icons/im";
 import { FaCode, FaServer, FaAmbulance } from "react-icons/fa";
 import { MdAttachMoney } from "react-icons/md";
 import { RiHandCoinFill, RiLiveFill } from "react-icons/ri";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 const Features = (props: ScriptProps) => {
   return (
     <div className="flex flex-col h-[100vh] w-screen relative items-center justify-evenly text-center p-20">
-      <h1 className="text-4xl md:text-5xl uppercase tracking-[24px]">
+      <motion.h1
+        transition={{
+          duration: 1.2,
+          ease: "easeOut",
+        }}
+        initial={{
+          opacity: 0,
+          x: -50,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
+        className="text-4xl md:text-5xl uppercase tracking-[24px]"
+      >
         Features
-      </h1>
-      <div className="flex snap-x snap-always flex-row gap-12 items-center flex-shrink-0 h-[16rem] w-[75vw] md:w-3/4 md:h-[32rem] overflow-x-scroll overflow-y-hidden">
+      </motion.h1>
+      <div className="flex snap-none flex-row gap-12 items-center flex-shrink-0 h-[16rem] w-[75vw] md:w-3/4 md:h-[32rem] overflow-x-scroll overflow-y-hidden">
         <Feature
           title="Staff"
           description="
@@ -124,7 +142,21 @@ const Features = (props: ScriptProps) => {
 
 const Feature = (props: { title: string; description: string; icon: any }) => {
   return (
-    <div className="flex flex-col flex-shrink-0 gap-6 justify-center items-center bg-[#2D4059] p-5 md:p-12 rounded-lg w-full md:w-96 h-[14rem] md:h-[28rem] snap-center scroll-smooth">
+    <motion.div
+      initial={{
+        opacity: 0,
+        scale: 0.5,
+      }}
+      transition={{
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+      }}
+      className="flex flex-col flex-shrink-0 gap-6 justify-center items-center bg-[#2D4059] p-5 md:p-12 rounded-lg w-full md:w-96 h-[14rem] md:h-[28rem] snap-start"
+    >
       <div className=" flex justify-center items-center w-24 h-24 bg-[#EEEEEE] rounded-full">
         {props.icon}
       </div>
@@ -134,7 +166,7 @@ const Feature = (props: { title: string; description: string; icon: any }) => {
         </h1>
         <p className="text-sm md:text-lg">{props.description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

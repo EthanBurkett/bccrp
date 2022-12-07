@@ -2,6 +2,7 @@ import React from "react";
 import { FaDiscord, FaTiktok } from "react-icons/fa";
 import Link from "next/link";
 import { AiFillCopyrightCircle } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 type Props = {};
 

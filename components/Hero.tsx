@@ -3,6 +3,7 @@ import { ScriptProps } from "next/script";
 import React, { useEffect, useRef } from "react";
 import { BiChevronDown } from "react-icons/bi";
 type Props = {};
+import { motion } from "framer-motion";
 
 const Hero = (props: ScriptProps) => {
   const [image, setImage] = React.useState<number>(1);
@@ -37,7 +38,20 @@ const Hero = (props: ScriptProps) => {
   return (
     <div className="container flex flex-col w-screen h-[100vh] relative justify-center ">
       <div className="w-screen h-full absolute flex justify-center items-center ">
-        <div
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1.2,
+            delay: 3,
+          }}
+          viewport={{
+            once: true,
+          }}
           className="absolute hidden md:flex bottom-8 cursor-pointer z-50"
           onClick={() =>
             document.getElementById("main")!.scrollTo({
@@ -47,7 +61,7 @@ const Hero = (props: ScriptProps) => {
           }
         >
           <BiChevronDown color={"white"} className="text-white text-7xl" />
-        </div>
+        </motion.div>
         <div className="w-full h-full bg-[rgba(0,0,0,0.35)] absolute z-40"></div>
         {images.map((img, index) => (
           <>
@@ -61,19 +75,91 @@ const Hero = (props: ScriptProps) => {
           </>
         ))}
         <div className="text z-40 flex justify-center items-center flex-col gap-6">
-          <h1 className="text-2xl md:text-4xl font-['Oswald'] tracking-[3px] uppercase text-[#EEEEEE]/80">
+          <motion.h1
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            viewport={{
+              once: true,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 1.2,
+              delay: 0.6,
+              ease: "easeOut",
+            }}
+            className="text-2xl md:text-4xl font-['Oswald'] tracking-[3px] uppercase text-[#EEEEEE]/80"
+          >
             Welcome to
-          </h1>
-          <h1 className="text-4xl text-center md:text-6xl font-['Oswald']  tracking-[6px] uppercase">
+          </motion.h1>
+          <motion.h1
+            initial={{
+              opacity: 0,
+              x: 50,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 1.2,
+              delay: 1.3,
+              ease: "easeOut",
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="text-4xl text-center md:text-6xl font-['Oswald']  tracking-[6px] uppercase"
+          >
             Blaine County Country Roleplay
-          </h1>
-          <p className="text-lg w-1/2 text-center font-light">
+          </motion.h1>
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1.2,
+              delay: 1.6,
+              ease: "easeOut",
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="text-lg w-1/2 text-center font-light"
+          >
             One of the best roleplay servers that you can find on FiveM. active
             departments and professional staff.
-          </p>
+          </motion.p>
           <br />
         </div>
-        <div className="bottom-[25vh] z-50 absolute hidden md:flex gap-6 flex-row justify-center items-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 50,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1.2,
+            delay: 2,
+            ease: "easeOut",
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="bottom-[25vh] z-50 absolute hidden md:flex gap-6 flex-row justify-center items-center"
+        >
           <Link href="fivem://connect/play.blaineccrp.com">
             <p
               title={`If this doesn't work, connect to "play.blaineccrp.com" `}
@@ -110,7 +196,7 @@ const Hero = (props: ScriptProps) => {
               Discord
             </p>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
