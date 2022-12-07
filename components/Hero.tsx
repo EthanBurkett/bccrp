@@ -66,7 +66,7 @@ const Hero = (props: ScriptProps) => {
         <div className="w-full h-full bg-[rgba(0,0,0,0.35)] absolute z-40"></div>
         {images.map((img, index) => (
           <>
-            <Image
+            <img
               alt="background"
               src={img}
               ref={imageEls[index]}
