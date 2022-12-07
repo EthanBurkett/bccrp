@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const changeNavbarColor = () => {
     const el = document.getElementById("main")!;
     const hero = document.getElementById("hero")!;
-    if (el.scrollTop >= hero.scrollHeight) {
+    if (el.scrollTop >= hero.scrollHeight / 8) {
       document.getElementById("navbar")!.classList.add("bg-[#2D4059]");
     } else {
       document.getElementById("navbar")!.classList.remove("bg-[#2D4059]");

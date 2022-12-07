@@ -38,7 +38,7 @@ const Hero = (props: ScriptProps) => {
     <div className="container flex flex-col w-screen h-[100vh] relative justify-center ">
       <div className="w-screen h-full absolute flex justify-center items-center ">
         <div
-          className="absolute bottom-8 cursor-pointer z-50"
+          className="absolute hidden md:flex bottom-8 cursor-pointer z-50"
           onClick={() =>
             document.getElementById("main")!.scrollTo({
               top: document.getElementById("features")!.offsetTop,
@@ -61,10 +61,10 @@ const Hero = (props: ScriptProps) => {
           </>
         ))}
         <div className="text z-40 flex justify-center items-center flex-col gap-6">
-          <h1 className="text-4xl font-['Oswald'] tracking-[3px] uppercase text-[#EEEEEE]/80">
+          <h1 className="text-2xl md:text-4xl font-['Oswald'] tracking-[3px] uppercase text-[#EEEEEE]/80">
             Welcome to
           </h1>
-          <h1 className="text-6xl font-['Oswald'] tracking-[6px] uppercase">
+          <h1 className="text-4xl text-center md:text-6xl font-['Oswald']  tracking-[6px] uppercase">
             Blaine County Country Roleplay
           </h1>
           <p className="text-lg w-1/2 text-center font-light">
@@ -73,9 +73,12 @@ const Hero = (props: ScriptProps) => {
           </p>
           <br />
         </div>
-        <div className="bottom-[25vh] z-50 absolute flex gap-6 flex-row justify-center items-center">
+        <div className="bottom-[25vh] z-50 absolute hidden md:flex gap-6 flex-row justify-center items-center">
           <Link href="fivem://connect/play.blaineccrp.com">
-            <p className="bg-hover relative orange flex flex-row  items-center text-center justify-evenly gap-2 cursor-pointer p-2 px-6 border-2 border-[var(--color)] uppercase font-light transition-all">
+            <p
+              title={`If this doesn't work, connect to "play.blaineccrp.com" `}
+              className="bg-hover relative orange flex flex-row  items-center text-center justify-evenly gap-2 cursor-pointer p-2 px-6 border-2 border-[var(--color)] uppercase font-light transition-all"
+            >
               <svg
                 role="img"
                 viewBox="0 0 24 24"
@@ -83,14 +86,16 @@ const Hero = (props: ScriptProps) => {
                 className="w-6 h-6 mr-2"
                 fill="#EEEEEE"
               >
-                <title>FiveM</title>
                 <path d="M22.4 24h-5.225c-.117 0-.455-1.127-1.026-3.375-1.982-6.909-3.124-10.946-3.417-12.12l3.37-3.325h.099c.454 1.42 2.554 7.676 6.299 18.768ZM12.342 7.084h-.048a3.382 3.385 0 0 1-.098-.492v-.098a102.619 102.715 0 0 1 3.272-3.275c.13.196.196.356.196.491v.05a140.694 140.826 0 0 1-3.322 3.324ZM5.994 10.9h-.05c.67-2.12 1.076-3.209 1.223-3.275L14.492.343c.08 0 .258.524.533 1.562zm1.37-4.014h-.05C8.813 2.342 9.612.048 9.71 0h4.495v.05a664.971 664.971 0 0 1-6.841 6.839Zm-2.69 7.874h-.05c.166-.798.554-1.418 1.174-1.855a312.918 313.213 0 0 1 5.71-5.717h.05c-.117.672-.375 1.175-.781 1.52zM1.598 24l-.098-.05c1.399-4.172 2.148-6.322 2.248-6.45l6.74-6.694v.05C10.232 11.88 8.974 16.263 6.73 24Z" />
               </svg>
               Join Server
             </p>
           </Link>
           <Link href="https://discord.gg/bccrp">
-            <p className="bg-hover relative blurple flex flex-row  items-center text-center justify-evenly cursor-pointer border-2 border-[var(--color)] p-2 px-6 uppercase font-light transition-all">
+            <p
+              title="Join the discord server"
+              className="bg-hover relative blurple flex flex-row  items-center text-center justify-evenly cursor-pointer border-2 border-[var(--color)] p-2 px-6 uppercase font-light transition-all"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

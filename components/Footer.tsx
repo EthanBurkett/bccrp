@@ -1,5 +1,4 @@
 import React from "react";
-import { SocialIcon } from "react-social-icons";
 import { FaDiscord, FaTiktok } from "react-icons/fa";
 import Link from "next/link";
 import { AiFillCopyrightCircle } from "react-icons/ai";
@@ -27,7 +26,7 @@ const Footer = (props: Props) => {
             </Link>
           </div>
         </div>
-        <h1 className="darker-text flex flex-row justify-center items-center text-lg gap-6">
+        <h1 className="darker-text flex flex-col md:flex-row justify-evenly md:justify-center items-center text-sm md:text-lg gap-2 w-full whitespace-nowrap">
           <div className="flex flex-row justify-center items-center gap-1">
             Copyright 2022
             <AiFillCopyrightCircle size={16} />

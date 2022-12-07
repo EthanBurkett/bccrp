@@ -16,6 +16,9 @@
   .bg-dark {
     background: darken(#222831, 5%);
   }
+  .bg-light {
+    background: lighten(#222831, 10%);
+  }
   .darker-text {
     color: darken(#eeeeee, 40%);
   }
@@ -67,5 +70,13 @@
 
   .bg-hover:hover {
     @apply bg-[var(--color)];
+  }
+
+  #mobile-menu {
+    @apply h-0 overflow-hidden transition-all duration-300;
+  }
+
+  .open {
+    @apply h-screen bg-red-500;
   }
 }
