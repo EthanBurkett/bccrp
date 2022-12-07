@@ -7,8 +7,8 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div className="absolute bg-dark h-[25vh] w-screen flex justify-evenly items-center">
-      <div className="flex flex-row gap-4 w-screen md:w-1/2 justify-evenly items-center">
+    <div className="absolute bg-dark h-[25vh] w-screen flex justify-center items-center">
+      <div className="flex flex-row gap-4 w-screen md:w-1/2 justify-evenly md:gap-12 md:justify-center items-center">
         <div className="flex flex-col gap-4 justify-center">
           <h1 className="text-4xl">Socials</h1>
           <div className="flex flex-col">
@@ -26,7 +26,7 @@ const Footer = (props: Props) => {
             </Link>
           </div>
         </div>
-        <h1 className="darker-text flex flex-col md:flex-row justify-evenly md:justify-center items-center text-sm md:text-lg gap-1 whitespace-nowrap">
+        <h1 className="darker-text flex flex-col md:flex-row  items-center text-sm md:text-lg gap-1 whitespace-nowrap">
           <div className="flex flex-row justify-center items-center gap-1">
             Copyright 2022
             <AiFillCopyrightCircle size={16} />
