@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Hero = (props: ScriptProps) => {
-  const [image, setImage] = React.useState<number>(1);
+  const [image, setImage] = React.useState<number>(0);
   const images = [
     "https://player.blaineccrp.com/static/img/bg_1.png",
     "https://cdn.discordapp.com/attachments/1048860362927259749/1050336350416670751/image.png",
@@ -31,7 +31,7 @@ const Hero = (props: ScriptProps) => {
       setImage((image) => {
         const prev = image;
 
-        image = (image + 1) % 5;
+        image = image > images.length ? 0 : image + 1;
         imageEls[image].current!.classList.add("opacity-100");
         imageEls[image].current!.classList.remove("opacity-0");
         imageEls[prev].current!.classList.remove("opacity-100");
