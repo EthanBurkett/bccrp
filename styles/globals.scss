@@ -9,7 +9,20 @@
   Text: EEEEEE
 */
 
-@layer {
+@layer components {
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  *::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #ff5722;
+    border-radius: 20px;
+    border: 3px solid lighten(#222831, 10%);
+    z-index: 99;
+  }
+
   * {
     font-family: "Oswald";
   }
@@ -22,6 +35,17 @@
   .darker-text {
     color: darken(#eeeeee, 40%);
   }
+
+  .applicationButton[data-status="pending"] {
+    @apply border-[#f2ff80];
+  }
+  .applicationButton[data-status="approved"] {
+    @apply border-[#80ff8c];
+  }
+  .applicationButton[data-status="denied"] {
+    @apply border-[#ff5c5c];
+  }
+
   .nav-item {
     @apply px-1 tracking-[3px] text-[#EEEEEE]/80;
     position: relative;
@@ -78,5 +102,27 @@
 
   .open {
     @apply h-screen bg-red-500;
+  }
+  .sidebar-item {
+    position: relative;
+    @apply transition p-3 text-xl font-light w-full text-center;
+    &:hover {
+      background: #222831;
+    }
+  }
+  .sidebar-item::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    text-align: center;
+    background-color: #ff5722;
+    transition: width 0.1s ease-out;
+  }
+  .sidebar-item:hover::before {
+    width: 4px;
+    transition: width 0.1s ease-out;
   }
 }

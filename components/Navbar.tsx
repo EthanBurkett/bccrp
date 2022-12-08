@@ -33,7 +33,7 @@ const Navbar = (props: Props) => {
         className="flex flex-row gap-6 justify-center items-center"
       >
         {/* <h1>logo</h1> */}
-        <h1 className="text-4xl tracking-[3px] uppercase font-['Oswald']">
+        <h1 className="text-4xl tracking-[3px] uppercase font-['Oswald'] text-white">
           bccrp
         </h1>
       </motion.div>
@@ -46,23 +46,27 @@ const Navbar = (props: Props) => {
           className="md:flex flex-row gap-4 md:gap-12 justify-center items-center hidden"
         >
           <p
-            onClick={() =>
+            onClick={() => {
+              const hero = document.getElementById("hero");
+              if (!hero) return (location.href = "/#hero");
               document.getElementById("main")!.scrollTo({
-                top: document.getElementById("hero")!.offsetTop,
+                top: hero!.offsetTop,
                 behavior: "smooth",
-              })
-            }
+              });
+            }}
             className="nav-item cursor-pointer text-md md:text-xl tracking-[3px] uppercase font-['Oswald']"
           >
             Home
           </p>
           <p
-            onClick={() =>
+            onClick={() => {
+              const features = document.getElementById("features");
+              if (!features) return (location.href = "/#features");
               document.getElementById("main")!.scrollTo({
-                top: document.getElementById("features")!.offsetTop,
+                top: features.offsetTop,
                 behavior: "smooth",
-              })
-            }
+              });
+            }}
             className="nav-item cursor-pointer text-md md:text-xl tracking-[3px] uppercase font-['Oswald']"
           >
             Features
@@ -93,23 +97,25 @@ const Navbar = (props: Props) => {
           }}
           className="md:hidden flex flex-row gap-4 justify-center items-center z-50 relative"
         >
-          <Squash toggled={open} toggle={handleToggle} />
+          <Squash color="white" toggled={open} toggle={handleToggle} />
         </motion.div>
         <div
           id="mobile-menu"
-          className="w-screen h-0 bg-[#222831] fixed top-0 left-0 flex flex-col justify-evenly items-center z-40"
+          className="w-screen h-0 bg-[#222831] fixed top-0 left-0 flex flex-col justify-evenly items-center z-40 text-white"
         >
           <MobileNavItem
             functions={{
               setOpen,
               handleToggle,
             }}
-            onClick={() =>
+            onClick={() => {
+              const hero = document.getElementById("hero");
+              if (!hero) return (location.href = "/#hero");
               document.getElementById("main")!.scrollTo({
-                top: document.getElementById("hero")!.offsetTop,
+                top: hero!.offsetTop,
                 behavior: "smooth",
-              })
-            }
+              });
+            }}
             text="Home"
             icon={<FaHome size={48} />}
           />
@@ -119,12 +125,14 @@ const Navbar = (props: Props) => {
               setOpen,
               handleToggle,
             }}
-            onClick={() =>
+            onClick={() => {
+              const features = document.getElementById("features");
+              if (!features) return (location.href = "/#features");
               document.getElementById("main")!.scrollTo({
-                top: document.getElementById("features")!.offsetTop,
+                top: features.offsetTop,
                 behavior: "smooth",
-              })
-            }
+              });
+            }}
             icon={<MdFeaturedPlayList size={48} />}
           />
           <MobileNavItem
