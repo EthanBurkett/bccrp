@@ -11,10 +11,12 @@ const Hero = (props: ScriptProps) => {
   const images = [
     "https://player.blaineccrp.com/static/img/bg_1.png",
     "https://player.blaineccrp.com/static/img/bg_2.png",
+    "https://media.discordapp.net/attachments/1048860362927259749/1050334352954900490/image.png",
     "https://player.blaineccrp.com/static/img/bg_3.png",
     "https://media.discordapp.net/attachments/850170109850157096/1050262828864516166/image.png?width=1920&height=569",
   ];
   const imageEls = [
+    useRef<HTMLImageElement>(null),
     useRef<HTMLImageElement>(null),
     useRef<HTMLImageElement>(null),
     useRef<HTMLImageElement>(null),
@@ -26,7 +28,7 @@ const Hero = (props: ScriptProps) => {
       setImage((image) => {
         const prev = image;
 
-        image = (image + 1) % 4;
+        image = (image + 1) % images.length;
         imageEls[image].current!.classList.add("opacity-100");
         imageEls[image].current!.classList.remove("opacity-0");
         imageEls[prev].current!.classList.remove("opacity-100");
