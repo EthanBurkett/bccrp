@@ -10,7 +10,7 @@ const Hero = (props: ScriptProps) => {
   const [image, setImage] = React.useState<number>(1);
   const images = [
     "https://player.blaineccrp.com/static/img/bg_1.png",
-    "https://cdn.discordapp.com/attachments/1048860362927259749/1050335748005568622/image.png",
+    "https://cdn.discordapp.com/attachments/1048860362927259749/1050336350416670751/image.png",
     "https://player.blaineccrp.com/static/img/bg_2.png",
     "https://media.discordapp.net/attachments/1048860362927259749/1050334352954900490/image.png",
     "https://player.blaineccrp.com/static/img/bg_3.png",
@@ -31,7 +31,7 @@ const Hero = (props: ScriptProps) => {
       setImage((image) => {
         const prev = image;
 
-        image = (image + 1) % images.length;
+        image = (image + 1) % 5;
         imageEls[image].current!.classList.add("opacity-100");
         imageEls[image].current!.classList.remove("opacity-0");
         imageEls[prev].current!.classList.remove("opacity-100");
