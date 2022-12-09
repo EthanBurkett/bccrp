@@ -27,7 +27,7 @@ const Hero = (props: ScriptProps) => {
       setImage((image) => {
         const prev = image;
 
-        image = image > images.length ? 0 : image + 1;
+        image = (image + 1) % 3;
         imageEls[image].current!.classList.add("opacity-100");
         imageEls[image].current!.classList.remove("opacity-0");
         imageEls[prev].current!.classList.remove("opacity-100");
