@@ -10,12 +10,8 @@ const Hero = (props: ScriptProps) => {
   const [image, setImage] = React.useState<number>(0);
   const images = [
     "https://player.blaineccrp.com/static/img/bg_1.png",
-    "https://cdn.discordapp.com/attachments/1048860362927259749/1050336350416670751/image.png",
     "https://player.blaineccrp.com/static/img/bg_2.png",
-    "https://media.discordapp.net/attachments/1048860362927259749/1050334352954900490/image.png",
     "https://player.blaineccrp.com/static/img/bg_3.png",
-    "https://media.discordapp.net/attachments/850170109850157096/1050262828864516166/image.png?width=1920&height=569",
-    "",
   ];
   const imageEls = [
     useRef<HTMLImageElement>(null),
